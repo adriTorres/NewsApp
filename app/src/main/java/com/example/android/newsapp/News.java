@@ -17,6 +17,16 @@ public class News {
     /** Website URL of the new */
     private String url;
 
+    /** Author of the new */
+    private String author;
+
+    public News(String sectionName, String title, String date, String url) {
+        this.sectionName = sectionName;
+        this.title = title;
+        this.date = date;
+        this.url = url;
+    }
+
     /**
      * Constructs a new {@link News} object.
      *
@@ -25,11 +35,12 @@ public class News {
      * @param date is the time when the new was published
      * @param url is the website URL to find more details about the new
      */
-    public News(String sectionName, String title, String date, String url) {
+    public News(String sectionName, String title, String date, String url, String author) {
         this.sectionName = sectionName;
         this.title = title;
         this.date = date;
         this.url = url;
+        this.author = author;
     }
 
     /**
@@ -58,5 +69,12 @@ public class News {
      */
     public String getUrl() {
         return url;
+    }
+
+    /**
+     * Returns the author of the new.
+     */
+    public String getAuthor() {
+        return author;
     }
 }

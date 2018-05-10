@@ -1,20 +1,17 @@
 package com.example.android.newsapp;
 
 import android.content.Context;
-import android.graphics.drawable.GradientDrawable;
-import android.support.v4.content.ContextCompat;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.TextView;
 
-import java.text.DecimalFormat;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.List;
-import java.util.Locale;
+
 
 /**
  * in the data source (a list of {@link News} objects).
@@ -66,15 +63,21 @@ public class NewsAdapter extends ArrayAdapter<News> {
         // Set the proper background color on the section name view.
         setSectionColor(sectionView, currentNew.getSectionName());
 
+        if(currentNew.getAuthor()!=null) {
+            // Find the TextView with view ID author
+            TextView authorView = (TextView) listItemView.findViewById(R.id.author);
+            // Display the author of the current new in that TextView
+            authorView.setText(currentNew.getAuthor());
+        }
+
         // Find the TextView with view ID date
         TextView dateView = (TextView) listItemView.findViewById(R.id.date);
-
 
         SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss");
         Date convertedDate = new Date();
         try {
             convertedDate = dateFormat.parse(currentNew.getDate());
-            SimpleDateFormat newformat = new SimpleDateFormat("yyyy.MM.dd 'at' HH:mm:ss z");
+            SimpleDateFormat newformat = new SimpleDateFormat("yyyy.MM.dd HH:mm:ss z");
             String finalDateString = newformat.format(convertedDate);
             // Display the date of the current new in that TextView
             dateView.setText(finalDateString);
@@ -121,6 +124,8 @@ public class NewsAdapter extends ArrayAdapter<News> {
         else if(sectionName.equals("Opinion")){
             sectionView.setBackgroundResource(R.color.sectionColorOpinion);
         }
+        else
+            sectionView.setBackgroundResource(R.color.sectionColorWorld);
 
     }
 }

@@ -33,6 +33,8 @@ public final class QueryUtils {
     private static final String DATE = "webPublicationDate";
     private static final String TITLE = "webTitle";
     private static final String WEBURL = "webUrl";
+    private static final String TAGS = "tags";
+    private static final String AUTHOR = "webTitle";
 
     /**
      * Create a private constructor because no one should ever create a {@link QueryUtils} object.
@@ -186,12 +188,33 @@ public final class QueryUtils {
                 // Extract the value for the key called "webUrl"
                 String url = currentNew.getString(WEBURL);
 
-                // Create a new {@link News} object with the sectionName, title, date,
-                // and url from the JSON response.
-                News mNew = new News(sectionName, title, date, url);
+                // Extract the array for the key called "tags"
+                JSONArray tagsArray = currentNew.getJSONArray(TAGS);
 
-                // Add the new {@link News} to the list of news.
-                news.add(mNew);
+                News mNew;
+                if(!tagsArray.isNull(0)) {
+                    // Extract the value for the key called "webTitle" from the first element of tags
+                    // to get the author's name
+                    JSONObject firstTag = tagsArray.getJSONObject(0);
+
+                    // Extract the value for the key called "webTitle"
+                    String author = firstTag.getString(AUTHOR);
+
+                    // Create a new {@link News} object with the sectionName, title, date,
+                    // and url from the JSON response.
+                    mNew = new News(sectionName, title, date, url, author);
+
+                    // Add the new {@link News} to the list of news.
+                    news.add(mNew);
+                }
+                else {
+                    // Create a new {@link News} object with the sectionName, title, date, author
+                    // and url from the JSON response.
+                    mNew = new News(sectionName, title, date, url);
+
+                    // Add the new {@link News} to the list of news.
+                    news.add(mNew);
+                }
             }
 
         } catch (JSONException e) {

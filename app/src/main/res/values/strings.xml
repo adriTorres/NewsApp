@@ -4,6 +4,7 @@
     <string name="no_news">No news found</string>
     <string name="no_internet_connection">No internet connection.</string>
     <string name="title_placeholder">Long placeholder location that should wrap to more than 3 lines of text to see how it looks properly</string>
-    <string name="date_placeholder">2001.07.04 at 12:08:56 PDT</string>
+    <string name="date_placeholder">2001.07.04 12:08:56 PDT</string>
     <string name="section_placeholder">News</string>
+    <string name="author_placeholder">Manolo Fernandez</string>
 </resources>
