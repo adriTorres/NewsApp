@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="item_padding">16dp</dimen>
+    <dimen name="item_pad_ver">8dp</dimen>
+    <dimen name="date_margRight">32dp</dimen>
+    <dimen name="date_size">12sp</dimen>
+    <dimen name="section_size">12sp</dimen>
+    <dimen name="section_padding_vert">4dp</dimen>
+    <dimen name="section_padding_hor">8dp</dimen>
+    <dimen name="item_bottom_linear_padding">4dp</dimen>
+</resources>

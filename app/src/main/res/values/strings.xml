@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">Guardian News</string>
+    <string name="api_key">508daca8-0e8f-4d66-902d-5ee8f562d15a</string>
+    <string name="no_news">No news found</string>
+    <string name="no_internet_connection">No internet connection.</string>
+    <string name="title_placeholder">Long placeholder location that should wrap to more than 3 lines of text to see how it looks properly</string>
+    <string name="date_placeholder">2001.07.04 at 12:08:56 PDT</string>
+    <string name="section_placeholder">News</string>
+</resources>

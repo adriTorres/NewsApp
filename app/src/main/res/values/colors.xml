@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#01579b</color>
+    <color name="colorPrimaryDark">#002f6c</color>
+    <color name="colorAccent">#15bac0</color>
+
+    <color name="textColorSection">#f3f3f3</color>
+
+    <color name="textColorTitle">#2B3D4D</color>
+
+    <color name="sectionColorNews">#4924cf</color>
+    <color name="sectionColorWorld">#2B3D4D</color>
+    <color name="sectionColorScience">#5b13b9</color>
+    <color name="sectionColorSociety">#850f56</color>
+    <color name="sectionColorPolitics">#4e342e</color>
+    <color name="sectionColorMusic">#351bc6</color>
+    <color name="sectionColorTechnology">#827717</color>
+    <color name="sectionColorTeacherNetwork">#b55c10</color>
+    <color name="sectionColorOpinion">#005450</color>
+    <color name="back_color">#f3f3f3</color>
+
+</resources>
