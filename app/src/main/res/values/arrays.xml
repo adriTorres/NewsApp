@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="settings_show_labels">
+        <item>@string/settings_show_all_label</item>
+        <item>@string/settings_show_debate_label</item>
+        <item>@string/settings_show_worldnews_label</item>
+        <item>@string/settings_show_science_label</item>
+        <item>@string/settings_show_society_label</item>
+        <item>@string/settings_show_news_label</item>
+        <item>@string/settings_show_politics_label</item>
+        <item>@string/settings_show_music_label</item>
+        <item>@string/settings_show_technology_label</item>
+        <item>@string/settings_show_teacher_label</item>
+    </string-array>
+
+    <string-array name="settings_show_values">
+        <item>@string/settings_show_all_value</item>
+        <item>@string/settings_show_debate_value</item>
+        <item>@string/settings_show_worldnews_value</item>
+        <item>@string/settings_show_science_value</item>
+        <item>@string/settings_show_society_value</item>
+        <item>@string/settings_show_news_value</item>
+        <item>@string/settings_show_politics_value</item>
+        <item>@string/settings_show_music_value</item>
+        <item>@string/settings_show_technology_value</item>
+        <item>@string/settings_show_teacher_value</item>
+    </string-array>
+</resources>

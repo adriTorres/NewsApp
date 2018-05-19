@@ -121,11 +121,8 @@ public class NewsAdapter extends ArrayAdapter<News> {
         else if(sectionName.equals("Teacher Network")){
             sectionView.setBackgroundResource(R.color.sectionColorTeacherNetwork);
         }
-        else if(sectionName.equals("Opinion")){
-            sectionView.setBackgroundResource(R.color.sectionColorOpinion);
-        }
         else
-            sectionView.setBackgroundResource(R.color.sectionColorWorld);
+            sectionView.setBackgroundResource(R.color.sectionColorOther);
 
     }
 }

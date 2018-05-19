@@ -7,4 +7,45 @@
     <string name="date_placeholder">2001.07.04 12:08:56 PDT</string>
     <string name="section_placeholder">News</string>
     <string name="author_placeholder">Manolo Fernandez</string>
+    <string name="settings">Settings</string>
+
+    <string name="settings_show_label">Show category</string>
+    <string name="settings_show_key" translatable="false">Show</string>
+    <string name="settings_show_default" translatable="false">@string/settings_show_debate_value</string>
+
+    <string name="settings_show_all_label">All</string>
+    <string name="settings_show_all_value" translatable="false">all</string>
+
+    <string name="settings_show_worldnews_label">World News</string>
+    <string name="settings_show_worldnews_value" translatable="false">world</string>
+
+    <string name="settings_show_science_label">Science</string>
+    <string name="settings_show_science_value" translatable="false">science</string>
+
+    <string name="settings_show_society_label">Society</string>
+    <string name="settings_show_society_value" translatable="false">society</string>
+
+    <string name="settings_show_news_label">News</string>
+    <string name="settings_show_news_value" translatable="false">news</string>
+
+    <string name="settings_show_politics_label">Politics</string>
+    <string name="settings_show_politics_value" translatable="false">politics</string>
+
+    <string name="settings_show_music_label">Music</string>
+    <string name="settings_show_music_value" translatable="false">music</string>
+
+    <string name="settings_show_technology_label">Technology</string>
+    <string name="settings_show_technology_value" translatable="false">technology</string>
+
+    <string name="settings_show_teacher_label">Teacher Network</string>
+    <string name="settings_show_teacher_value" translatable="false">teacher-network</string>
+
+    <string name="settings_show_debate_label">Debates</string>
+    <string name="settings_show_debate_value" translatable="false">debate</string>
+
+    <string name="order_summary">Order news by most relevant. If not checked, order by newest in All category</string>
+    <string name="order_title">Order by most relevant</string>
+    <string name="settings_order_key">ordercheckbox</string>
+    <string name="settings_order_newest">newest</string>
+
 </resources>

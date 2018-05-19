@@ -16,7 +16,7 @@
     <color name="sectionColorMusic">#351bc6</color>
     <color name="sectionColorTechnology">#827717</color>
     <color name="sectionColorTeacherNetwork">#b55c10</color>
-    <color name="sectionColorOpinion">#005450</color>
     <color name="back_color">#f3f3f3</color>
+    <color name="sectionColorOther">#AE5E7D</color>
 
 </resources>

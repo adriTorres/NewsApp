@@ -1,5 +1,8 @@
 package com.example.android.newsapp;
 
+import android.content.SharedPreferences;
+import android.nfc.Tag;
+import android.preference.PreferenceManager;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 
@@ -13,6 +16,8 @@ import android.net.NetworkInfo;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ListView;
@@ -25,10 +30,20 @@ public class NewsActivity extends AppCompatActivity
         implements LoaderCallbacks<List<News>> {
 
     private static final String LOG_TAG = NewsActivity.class.getName();
+    private static final String Q = "q";
+    private static final String SHOWTAGS = "show-tags";
+    private static final String SHOWFIELDS = "show-fields";
+    private static final String SECTION = "section";
+    private static final String ORDERBY = "order-by";
+    private static final String APIKEY = "api-key";
+    private static final String DEBATES = "debates";
+    private static final String CONTRIBUTIOR = "contributor";
+    private static final String THUMBNAIL = "thumbnail";
+    private static final String NEWEST  = "newest";
+    private static final String KEY = "508daca8-0e8f-4d66-902d-5ee8f562d15a";
 
     /** URL for news data from the The Guardian dataset */
-    private static final String REQUEST_URL =
-            "https://content.guardianapis.com/search?q=debates&show-tags=contributor&show-fields=thumbnail&api-key=508daca8-0e8f-4d66-902d-5ee8f562d15a";
+    private static final String REQUEST_URL = "https://content.guardianapis.com/search";
 
     /**
      * Constant value for the news loader ID. We can choose any integer.
@@ -106,10 +121,25 @@ public class NewsActivity extends AppCompatActivity
         }
     }
 
+
     @Override
     public Loader<List<News>> onCreateLoader(int i, Bundle bundle) {
-        // Create a new loader for the given URL
-        return new NewsLoader(this, REQUEST_URL);
+        SharedPreferences sharedPrefs = PreferenceManager.getDefaultSharedPreferences(this);
+        String category = sharedPrefs.getString(getString(R.string.settings_show_key), getString(R.string.settings_show_default));
+        boolean order = sharedPrefs.getBoolean(getString(R.string.settings_order_key), true);
+
+
+        Uri baseUri = Uri.parse(REQUEST_URL);
+        Uri.Builder uriBuilder = baseUri.buildUpon();
+        if(!category.equals("all")) uriBuilder.appendQueryParameter(Q, DEBATES);
+        uriBuilder.appendQueryParameter(SHOWTAGS, CONTRIBUTIOR);
+        uriBuilder.appendQueryParameter(SHOWFIELDS, THUMBNAIL);
+        if(!category.equals("all") && !category.equals("debate")) uriBuilder.appendQueryParameter(SECTION, category);
+        if(!order) uriBuilder.appendQueryParameter(ORDERBY, NEWEST);
+        uriBuilder.appendQueryParameter(APIKEY, KEY);
+
+
+        return new NewsLoader(this, uriBuilder.toString());
     }
 
     @Override
@@ -135,5 +165,22 @@ public class NewsActivity extends AppCompatActivity
     public void onLoaderReset(Loader<List<News>> loader) {
         // Loader reset, so we can clear out our existing data.
         mAdapter.clear();
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.main, menu);
+        return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        int id = item.getItemId();
+        if (id == R.id.action_setting) {
+            Intent settingsIntent = new Intent(this, SettingsActivity.class);
+            startActivity(settingsIntent);
+            return true;
+        }
+        return super.onOptionsItemSelected(item);
     }
 }
