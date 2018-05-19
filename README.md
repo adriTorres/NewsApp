@@ -1,5 +1,5 @@
 # News App
-6th Project from Udacity Android Basics by Google
+6th and 7th Project from Udacity Android Basics by Google
 
 Api used: https://open-platform.theguardian.com/documentation/
 
